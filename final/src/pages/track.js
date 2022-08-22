@@ -19,7 +19,8 @@ export const GET_TRACK_DETAILS = gql`
       length
       modulesCount
       numberOfViews
-      numberOfLikes @client
+      # numberOfLikes @client
+      numberOfLikes
       modules {
         id
         title

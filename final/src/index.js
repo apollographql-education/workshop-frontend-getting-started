@@ -4,28 +4,28 @@ import App from './app';
 
 import { ApolloProvider, ApolloClient, InMemoryCache, gql } from '@apollo/client';
 
-const typeDefs = gql`
-  extend type Track {
-    numberOfLikes: Int
-  }
-`;
+// const typeDefs = gql`
+//   extend type Track {
+//     numberOfLikes: Int
+//   }
+// `;
 
 const client = new ApolloClient({
   uri: 'https://workshop-catstronauts-api.herokuapp.com/',
   cache: new InMemoryCache({
-    typePolicies: {
-      Track: {
-        fields: {
-          numberOfLikes: {
-            read() {
-              return Math.floor(Math.random() * 100); // random number from 0 to 99
-            },
-          },
-        },
-      },
-    },
+    // typePolicies: {
+    //   Track: {
+    //     fields: {
+    //       numberOfLikes: {
+    //         read() {
+    //           return Math.floor(Math.random() * 100); // random number from 0 to 99
+    //         },
+    //       },
+    //     },
+    //   },
+    // },
   }),
-  typeDefs,
+  // typeDefs,
 });
 
 ReactDOM.render(
