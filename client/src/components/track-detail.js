@@ -1,17 +1,11 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import {
-  colors,
-  Button,
-  IconRun,
-  IconView,
-  IconTime,
-  IconBook,
-} from '../styles';
+import { colors, Button, IconRun, IconView, IconTime, IconBook } from '../styles';
 import { humanReadableTimeFromSeconds } from '../utils/helpers';
 import { Link } from 'react-router-dom';
 import ContentSection from './content-section';
 import MarkDown from './md-content';
+import Likes from './likes';
 
 /**
  * Track Detail component renders the main content of a given track:
@@ -19,16 +13,7 @@ import MarkDown from './md-content';
  * It provides access to the first module of the track.
  */
 const TrackDetail = ({ track }) => {
-  const {
-    title,
-    description,
-    thumbnail,
-    author,
-    length,
-    modulesCount,
-    modules,
-    numberOfViews,
-  } = track;
+  const { title, description, thumbnail, author, length, modulesCount, modules, numberOfViews } = track;
 
   return (
     <ContentSection>
@@ -58,13 +43,12 @@ const TrackDetail = ({ track }) => {
             <AuthorImage src={author.photo} />
             <AuthorName>{author.name}</AuthorName>
           </DetailItem>
+          <DetailItem>
+            <Likes />
+          </DetailItem>
           <div>
             <StyledLink to={`./module/${modules[0]['id']}`}>
-              <Button
-                icon={<IconRun width="20px" />}
-                color={colors.pink.base}
-                size="large"
-              >
+              <Button icon={<IconRun width="20px" />} color={colors.pink.base} size="large">
                 Start Track
               </Button>
             </StyledLink>
@@ -77,9 +61,7 @@ const TrackDetail = ({ track }) => {
               {modules.map((module) => (
                 <li key={module.title}>
                   <div>{module.title}</div>
-                  <ModuleLength>
-                    {humanReadableTimeFromSeconds(module.length)}
-                  </ModuleLength>
+                  <ModuleLength>{humanReadableTimeFromSeconds(module.length)}</ModuleLength>
                 </li>
               ))}
             </ul>
