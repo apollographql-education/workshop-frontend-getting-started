@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Layout } from '../components';
 
 /**
- * Track Page fetches a track's data from the gql query GET_TRACK
+ * Track Page fetches a track's data from the gql query GET_TRACK_DETAILS
  * and provides it to the TrackDetail component to display
  */
 const Track = () => {
