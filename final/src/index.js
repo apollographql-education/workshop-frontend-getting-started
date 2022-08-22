@@ -11,7 +11,7 @@ const typeDefs = gql`
 `;
 
 const client = new ApolloClient({
-  uri: 'https://odyssey-lift-off-server.herokuapp.com/',
+  uri: 'https://workshop-catstronauts-api.herokuapp.com/',
   cache: new InMemoryCache({
     typePolicies: {
       Track: {
