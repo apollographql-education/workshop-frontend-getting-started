@@ -13,7 +13,8 @@ import Likes from './likes';
  * It provides access to the first module of the track.
  */
 const TrackDetail = ({ track }) => {
-  const { title, description, thumbnail, author, length, modulesCount, modules, numberOfViews } = track;
+  const { id, title, description, thumbnail, author, length, modulesCount, modules, numberOfViews, numberOfLikes } =
+    track;
 
   return (
     <ContentSection>
@@ -44,7 +45,7 @@ const TrackDetail = ({ track }) => {
             <AuthorName>{author.name}</AuthorName>
           </DetailItem>
           <DetailItem>
-            <Likes />
+            <Likes numberOfLikes={numberOfLikes} id={id} />
           </DetailItem>
           <div>
             <StyledLink to={`./module/${modules[0]['id']}`}>
