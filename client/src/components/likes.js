@@ -2,11 +2,11 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { colors, IconLike } from '../styles';
 
-export default function Likes({ numberOfLikes }) {
+export default function Likes({ numberOfLikes, id }) {
   return (
     <div>
       <NumberOfLikes>
-        {numberOfLikes || '???'}
+        {isNaN(numberOfLikes) ? '???' : numberOfLikes}
         <LikeButton>
           <IconLike />
         </LikeButton>
