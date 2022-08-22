@@ -2,7 +2,7 @@
 
 Welcome to the companion starter code repo of the Summit 2022 Workshop "Getting started with GraphQL and Apollo: Frontend"!
 
-You can [preview the completed demo app here](TODO).
+You can [preview the completed demo app here](https://workshop-catstronauts.netlify.app/).
 
 ## Codebase structure
 
