@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app';
 
-import { ApolloProvider, ApolloClient, InMemoryCache, gql } from '@apollo/client';
+import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 
 // const typeDefs = gql`
 //   extend type Track {
