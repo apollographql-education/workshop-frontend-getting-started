@@ -1,6 +1,31 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { Layout } from '../components';
+import { useQuery, gql } from '@apollo/client';
+import { Layout, ModuleDetail, Loading } from '../components';
+
+/**
+ * GET_MODULE_AND_PARENT_TRACK gql query to retrieve a specific module and its parent track,
+ * both needed for the ModuleDetail component
+ */
+export const GET_MODULE_AND_PARENT_TRACK = gql`
+  query GetModuleAndParentTrack($moduleId: ID!, $trackId: ID!) {
+    module(id: $moduleId) {
+      id
+      title
+      content
+      videoUrl
+    }
+    track(id: $trackId) {
+      id
+      title
+      modules {
+        id
+        title
+        length
+      }
+    }
+  }
+`;
 
 /**
  * Module page fetches both parent track and module's data from the gql query GET_MODULE_AND_PARENT_TRACK
@@ -9,11 +34,25 @@ import { Layout } from '../components';
 const Module = () => {
   let { trackId, moduleId } = useParams(); // get trackId and moduleId from the URL params
 
-  return (
-    <Layout fullWidth>
-      TODO: Replace me with module details for this module: {moduleId} which has this parent track: {trackId}.
-    </Layout>
-  );
+  const { loading, error, data } = useQuery(GET_MODULE_AND_PARENT_TRACK, {
+    variables: { moduleId, trackId },
+  });
+
+  if (error) {
+    return <p>ERROR: {error.message}</p>;
+  }
+
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (data) {
+    return (
+      <Layout fullWidth>
+        <ModuleDetail track={data.track} module={data.module} />
+      </Layout>
+    );
+  }
 };
 
 export default Module;
