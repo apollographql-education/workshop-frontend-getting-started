@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { Layout } from '../components';
+import { Layout, Loading } from '../components';
+import TrackDetail from '../components/track-detail';
 
 /**
  * Track Page fetches a track's data from the gql query GET_TRACK_DETAILS
