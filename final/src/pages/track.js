@@ -5,7 +5,7 @@ import { Layout, Loading } from '../components';
 import TrackDetail from '../components/track-detail';
 
 /** GET_TRACK_DETAILS gql query to retrieve a specific track by its ID */
-export const GET_TRACK_DETAILS = gql`
+const GET_TRACK_DETAILS = gql`
   query GetTrackDetails($trackId: ID!) {
     track(id: $trackId) {
       id
@@ -42,12 +42,12 @@ const Track = () => {
     variables: { trackId },
   });
 
-  if (error) {
-    return <p>ERROR: {error.message}</p>;
-  }
-
   if (loading) {
     return <Loading />;
+  }
+
+  if (error) {
+    return <p>ERROR: {error.message}</p>;
   }
 
   if (data) {

@@ -4,7 +4,7 @@ import { Layout, Loading } from '../components';
 import TrackCard from '../components/track-card';
 
 /** TRACKS gql query to retreive all tracks */
-export const GET_TRACKS_FOR_HOMEPAGE = gql`
+const GET_TRACKS_FOR_HOMEPAGE = gql`
   query GetTracksForHomepage {
     tracksForHome {
       id
@@ -27,11 +27,12 @@ export const GET_TRACKS_FOR_HOMEPAGE = gql`
 const Tracks = () => {
   const { loading, error, data } = useQuery(GET_TRACKS_FOR_HOMEPAGE);
 
-  if (error) {
-    return <p>ERROR: {error.message}</p>;
-  }
   if (loading) {
     return <Loading />;
+  }
+
+  if (error) {
+    return <p>ERROR: {error.message}</p>;
   }
 
   if (data) {
