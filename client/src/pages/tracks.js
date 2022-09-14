@@ -1,5 +1,6 @@
 import React from 'react';
-import { Layout } from '../components';
+import { Layout, Loading } from '../components';
+import TrackCard from '../components/track-card';
 
 /**
  * Tracks Page is the Catstronauts home page.

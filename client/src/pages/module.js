@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { Layout } from '../components';
+import { Layout, Loading, ModuleDetail } from '../components';
 
 /**
  * Module page fetches both parent track and module's data from the gql query GET_MODULE_AND_PARENT_TRACK
