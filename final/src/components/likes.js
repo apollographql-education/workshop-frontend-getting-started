@@ -4,7 +4,7 @@ import { colors, IconLike } from '../styles';
 import { useMutation, gql } from '@apollo/client';
 
 const LIKE_TRACK = gql`
-  mutation Mutation($trackId: ID!) {
+  mutation LikeTrack($trackId: ID!) {
     likeTrack(trackId: $trackId) {
       success
       track {
