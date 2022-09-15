@@ -36,9 +36,7 @@ export default function Likes({ numberOfLikes, id }) {
       <NumberOfLikes>
         {isNaN(numberOfLikes) ? '???' : numberOfLikes}
         <LikeButton
-          onClick={() => {
-            likeTrackMutate();
-          }}
+          onClick={likeTrackMutate}
         >
           <IconLike />
         </LikeButton>
