@@ -18,17 +18,6 @@ const LIKE_TRACK = gql`
 export default function Likes({ numberOfLikes, id }) {
   const [likeTrackMutate] = useMutation(LIKE_TRACK, {
     variables: { trackId: id },
-    optimisticResponse: {
-      likeTrack: {
-        success: true,
-        __typename: 'LikeTrackResponse',
-        track: {
-          id: id,
-          __typename: 'Track',
-          numberOfLikes: numberOfLikes + 1,
-        },
-      },
-    },
   });
 
   return (
