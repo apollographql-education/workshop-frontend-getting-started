@@ -44,9 +44,9 @@ const TrackDetail = ({ track }) => {
             <AuthorImage src={author.photo} />
             <AuthorName>{author.name}</AuthorName>
           </DetailItem>
-          <DetailItem>
+          {numberOfLikes && <DetailItem>
             <Likes numberOfLikes={numberOfLikes} id={id} />
-          </DetailItem>
+          </DetailItem>}
           <div>
             <StyledLink to={`./module/${modules[0]['id']}`}>
               <Button icon={<IconRun width="20px" />} color={colors.pink.base} size="large">
