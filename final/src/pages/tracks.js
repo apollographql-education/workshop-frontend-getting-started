@@ -13,6 +13,7 @@ const GET_TRACKS_FOR_HOMEPAGE = gql`
       length
       modulesCount
       author {
+        id
         name
         photo
       }
