@@ -44,7 +44,7 @@ const TrackDetail = ({ track }) => {
             <AuthorImage src={author.photo} />
             <AuthorName>{author.name}</AuthorName>
           </DetailItem>
-          {numberOfLikes && <DetailItem>
+          {numberOfLikes != null && <DetailItem>
             <Likes numberOfLikes={numberOfLikes} id={id} />
           </DetailItem>}
           <div>
