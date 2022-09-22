@@ -32,10 +32,10 @@ const GET_TRACK_DETAILS = gql`
 `;
 
 /**
- * Track Page fetches a track's data from the gql query GET_TRACK_DETAILS
+ * TrackDetailsPage fetches a track's data from the gql query GET_TRACK_DETAILS
  * and provides it to the TrackDetail component to display
  */
-const Track = () => {
+const TrackDetailsPage = () => {
   let { trackId } = useParams(); // get trackId from the URL params
 
   const { loading, error, data } = useQuery(GET_TRACK_DETAILS, {
@@ -59,4 +59,4 @@ const Track = () => {
   }
 };
 
-export default Track;
+export default TrackDetailsPage;

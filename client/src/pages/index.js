@@ -2,16 +2,16 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 /** importing our pages */
-import Tracks from './tracks';
-import Track from './track';
-import Module from './module';
+import TracksHomePage from './tracks-home-page';
+import TrackDetailsPage from './track-details-page';
+import ModuleDetailsPage from './module-details-page';
 
 export default function Pages() {
   return (
     <Routes>
-      <Route path="/" element={<Tracks />} />
-      <Route path="track/:trackId" element={<Track />} />
-      <Route path="track/:trackId/module/:moduleId" element={<Module />} />
+      <Route path="/" element={<TracksHomePage />} />
+      <Route path="track/:trackId" element={<TrackDetailsPage />} />
+      <Route path="track/:trackId/module/:moduleId" element={<ModuleDetailsPage />} />
     </Routes>
   );
 }
