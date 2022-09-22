@@ -2,6 +2,10 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { colors, IconLike } from '../styles';
 
+/*
+* The Likes component shows the number of likes for a track and
+*   sends a mutation to like it when the LikeButton is clicked
+*/
 export default function Likes({ numberOfLikes, id }) {
   return (
     <div>

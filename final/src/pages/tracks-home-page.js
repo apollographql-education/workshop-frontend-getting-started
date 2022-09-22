@@ -22,10 +22,10 @@ const GET_TRACKS_FOR_HOMEPAGE = gql`
 `;
 
 /**
- * Tracks Page is the Catstronauts home page.
+ * TracksHomePage is the Catstronauts home page.
  * We display a grid of tracks fetched with useQuery with the GET_TRACKS_FOR_HOMEPAGE query
  */
-const Tracks = () => {
+const TracksHomePage = () => {
   const { loading, error, data } = useQuery(GET_TRACKS_FOR_HOMEPAGE);
 
   if (loading) {
@@ -47,4 +47,4 @@ const Tracks = () => {
   }
 };
 
-export default Tracks;
+export default TracksHomePage;

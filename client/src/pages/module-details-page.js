@@ -3,10 +3,10 @@ import { useParams } from 'react-router-dom';
 import { Layout, Loading, ModuleDetail } from '../components';
 
 /**
- * Module page fetches both parent track and module's data from the gql query GET_MODULE_AND_PARENT_TRACK
+ * ModuleDetailsPage fetches both parent track and module's data from the gql query GET_MODULE_AND_PARENT_TRACK
  * and feeds them to the ModuleDetail component
  */
-const Module = () => {
+const ModuleDetailsPage = () => {
   let { trackId, moduleId } = useParams(); // get trackId and moduleId from the URL params
 
   return (
@@ -16,4 +16,4 @@ const Module = () => {
   );
 };
 
-export default Module;
+export default ModuleDetailsPage;
